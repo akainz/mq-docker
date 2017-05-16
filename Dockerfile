@@ -63,11 +63,14 @@ RUN export DEBIAN_FRONTEND=noninteractive \
 
 COPY *.sh /usr/local/bin/
 COPY *.mqsc /etc/mqm/
+COPY qm.ini /var/
+COPY mq-config.sh /var/
 
 # Support the latest functional cmdlevel by default
 ENV MQ_QMGR_CMDLEVEL=802
 
 RUN chmod +x /usr/local/bin/*.sh
+RUN chmod +x /var/mq-config.sh
 
 # Always use port 1414 (the Docker administrator can re-map ports at runtime)
 EXPOSE 1414
