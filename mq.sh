@@ -71,6 +71,7 @@ config()
     fi
     echo "----------------------------------------"
   fi
+  cp /var/qm.ini /var/mqm/qmgrs/${MQ_QMGR_NAME}/
   strmqm ${MQ_QMGR_NAME}
 
   # Turn off script failing here because of listeners failing the script
@@ -81,7 +82,7 @@ config()
   set -e
 
   echo "----------------------------------------"
-  mq-dev-config.sh ${MQ_QMGR_NAME}
+  mq-config.sh ${MQ_QMGR_NAME}
   echo "----------------------------------------"
 }
 
