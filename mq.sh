@@ -39,7 +39,10 @@ config()
 {
   # Populate and update the contents of /var/mqm - this is needed for
 	# bind-mounted volumes, and also to migrate data from previous versions of MQ
-
+  echo Setting log to /var/mqm/log/${MQ_QMGR_NAME}
+  
+  sed -i -e 's/QM1/${MQ_QMGR_NAME}/g' qm.ini
+  
   setup-var-mqm.sh
 
   if [ -z "${MQ_DISABLE_WEB_CONSOLE}" ]; then
