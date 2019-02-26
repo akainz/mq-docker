@@ -41,7 +41,7 @@ config()
 	# bind-mounted volumes, and also to migrate data from previous versions of MQ
   echo Setting log to /var/mqm/log/${MQ_QMGR_NAME}
   
-  sed -i -e 's/QM1/${MQ_QMGR_NAME}/g' /var/qm.ini
+  sed -i -e "s/QM1/${MQ_QMGR_NAME}/g" /var/qm.ini
   
   setup-var-mqm.sh
 
