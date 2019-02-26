@@ -62,4 +62,5 @@ else
 fi
 if [ ! -d /var/mqm/log/QM1 ]; then
   mkdir /var/mqm/log/QM1
+  su -c "chown mqm:mqm /var/mqm/log/QM1" -l mqm
 fi
